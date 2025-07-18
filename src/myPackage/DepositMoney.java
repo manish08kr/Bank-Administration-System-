@@ -12,10 +12,11 @@ public class DepositMoney {
 
 	public static void main(String[] args) {
 
+		String AccNo = JOptionPane.showInputDialog("Enter your Account No : ");
+		String AmtStr = JOptionPane.showInputDialog("Enter Amount to Deposit");
+		
 		try(Connection con = DBConnection.getConnection()){
 			if(con != null) {
-				String AccNo = JOptionPane.showInputDialog("Enter your Account No : ");
-				String AmtStr = JOptionPane.showInputDialog("Enter Amount to Deposit");
 				Double Amt = Double.parseDouble(AmtStr);
 				
 				String query = "Select balance from accounts where account_no =?";
